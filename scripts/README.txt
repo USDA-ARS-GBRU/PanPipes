@@ -1,1 +1,1 @@
-
+- salmonella_5_pggb.sh: a script to build a PGGB graph of 5 salmonella lines selected for maximum diversity.

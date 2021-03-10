@@ -1,0 +1,35 @@
+general:
+  input-fasta:        .//salmonella_5lines.fa
+  output-dir:         ./
+  resume:             false
+  threads:            48
+alignment:
+  mapping-tool:       edyeet
+  no-splits:          false
+  segment-length:     100000
+  block-length:       300000
+  no-merge-segments:  false
+  map-pct-id:         80
+  align-pct-id:       0
+  n-secondary:        10
+  mash-kmer:          16
+  wfmash:             false
+  exclude-delim:      false
+seqwish:
+  min-match-len:      19
+  transclose-batch:   1000000
+smoothxg:
+  block-weight-max:   10000
+  path-jump-max:      5000
+  edge-jump-max:      5000
+  poa-length-max:     10000
+  poa-params:         1,4,6,2,26,1
+  consensus-spec:     10,100,1000,10000
+  block-id-min:       0
+  ratio-contain:      0
+odgi:
+  viz:                false
+  layout:             false
+  stats:              false
+reporting:
+  multiqc:            false
