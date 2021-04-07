@@ -8,8 +8,8 @@ position based on their name.
 USAGE:
 python identify_misaligned_sim_reads.py input_sam.sam read_length(def:150) wiggle_length (def:5) > out.sam
 
-read_length is the read length of your simulated reads (NOT insert size), wiggle_length is how
-much room around the start coordinates you will allow as "valid"
+read_length is the read length of your simulated reads (NOT insert size), default 150; wiggle_length is how
+much room around the start coordinates you will allow as "valid", default 5 bp
 
 SAM files must be generated from input FASTQs made from 
 wgsim.
@@ -40,8 +40,8 @@ def find_misaligns(infile,read_len=150,wiggle=5,boundarypattern="(?<=_)\d+"):
             
             align_pos = int(line.strip().split('\t')[3])
             
-            valid_starts = (list(range(start_boundary-5,start_boundary+6)) + 
-                            list(range(secondary_start-5,secondary_start+6)))
+            valid_starts = (list(range(start_boundary-wiggle,start_boundary+(wiggle+1))) + 
+                            list(range(secondary_start-wiggle,secondary_start+(wiggle+1))))
             
             if align_pos not in valid_starts:
                 print(line)
