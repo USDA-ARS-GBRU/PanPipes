@@ -6,7 +6,7 @@ and determine which reads have been aligned to the wrong
 position based on their name.
 
 USAGE:
-python identify_misaligned_sim_reads.py input_sam.sam read_length(def:150) wiggle_length (def:5) > out.sam
+python identify_misaligned_sim_reads.py input_sam.sam read_length(def:150) wiggle_length(def:5) > out.sam
 
 read_length is the read length of your simulated reads (NOT insert size), default 150; wiggle_length is how
 much room around the start coordinates you will allow as "valid", default 5 bp
