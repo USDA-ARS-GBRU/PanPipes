@@ -12,6 +12,9 @@ Test sets and pipeline scripts for pan-genomic graph construction and analysis
 
 ## Graph Viewing
 
+
+
+
 ## Tool: gfa_parser
 ### Function: characterize the common and specific node of pangenome graph 
 
@@ -20,6 +23,8 @@ Usage:
 `perl gfa_parser.pl -g gfa_graph_file  [-s short_path_name_T|F] -o [gfa_graph_file.csv for bandage]`
 
 help file:  gfa_parser_readme.pdf
+
+
 
 ## Comparison of performance between genome graph and linear reference 
   sim_linear_graph_map_performance.sh
