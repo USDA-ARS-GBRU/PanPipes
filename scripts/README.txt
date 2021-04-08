@@ -9,3 +9,6 @@ Command:
 
 help file: 
 gfa_parser_readme.pdf
+
+# Comparison of performance  between genome graph and linear reference 
+  sim_linear_graph_map_performance.sh
