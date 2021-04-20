@@ -1,8 +1,12 @@
-## salmonella_5_pggb.sh: a script to build a PGGB graph of 5 salmonella lines selected for maximum diversity. 
+## salmonella_5_pggb.sh 
 
-## characterize the common and specific node of pangenome graph
+A script to build a PGGB graph of 5 salmonella lines selected for maximum diversity. 
 
-## gfa_parser
+## sim_linear_graph_map_performance.sh
+
+## identify_misaligned_sim_reads.py
+
+## gfa_parser.pl
 
 Command: 
 `perl gfa_parser.pl -g gfa_graph_file  [-s short_path_name_T|F] -o [gfa_graph_file.csv ofr bandage]`
