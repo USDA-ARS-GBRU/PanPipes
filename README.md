@@ -1,7 +1,7 @@
 # PanPipes
-![PanPipes Logo](/pics/logo.png)
-
 Test sets and pipeline scripts for pan-genomic graph construction and analysis
+
+![PanPipes Logo](/pics/logo.png)
 
 ## Construction
 
