@@ -33,17 +33,17 @@ def get_path_and_nodelen(gfa_file):
                 nodelist = [int(x) for x in nodelist]
                 pathlist.update(nodelist)
             elif re.match('^S',line):
-                line = line.strip().split('\t')
+                line = line.strip().split()
                 seq = line[2]
                 nodelen = len(seq)
                 nodelen_d[int(line[1])] = nodelen
     return (pathlist,nodelen_d)
-    
+
 '''
 def get_percent_node_cov(nodelen,read_path,start,end):
     if len(read_path) <=1:
         nl = nodelen[read_path[0]]
-        cov = (end+1) - (start+1) 
+        cov = (end+1) - (start+1)
         pc_cov = cov / nl
         return pc_cov
     else:
@@ -54,7 +54,7 @@ def get_percent_node_cov(nodelen,read_path,start,end):
         first_pc_cov = (first_len-start)/first_len
         last_pc_cov = (end+1)/last_len
         return (first_pc_cov,last_pc_cov)
-'''        
+'''
 
 
 def get_node_cov(gaf_file,pathlist,nodelen_d):
@@ -81,7 +81,7 @@ def get_node_cov(gaf_file,pathlist,nodelen_d):
                             'coverage':node_cov_d[n]['coverage'],
                             'length':node_cov_d[n]['length']})
     return node_cov_l
-    
+
 def print_node_cov_table(node_cov_l):
     header = ['node','length','coverage','reads']
     print('\t'.join(header))
