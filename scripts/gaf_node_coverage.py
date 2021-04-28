@@ -62,7 +62,7 @@ def get_node_cov(gaf_file,pathlist,nodelen_d):
         node_cov_d = defaultdict(lambda: {'coverage': 0,'reads': [],
                                 'length':0})
         for line in f:
-            line = line.strip().split('\t')
+            line = line.strip().split()
             path_s = int(line[7])
             path_e = int(line[8])
             read = line[0]
@@ -74,12 +74,12 @@ def get_node_cov(gaf_file,pathlist,nodelen_d):
                 if n in pathlist:
                     node_cov_d[n]['coverage'] += 1
                     node_cov_d[n]['reads'].append(read)
-                    node_cov_d[n]['length'] = nodelen_d[n]
+                    
     node_cov_l = []
     for n in sorted(list(pathlist)):
         node_cov_l.append({'node':n,'reads':node_cov_d[n]['reads'],
                             'coverage':node_cov_d[n]['coverage'],
-                            'length':node_cov_d[n]['length']})
+                            'length':nodelen_d[n]})
     return node_cov_l
 
 def print_node_cov_table(node_cov_l):
