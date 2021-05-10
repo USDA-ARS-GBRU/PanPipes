@@ -17,7 +17,7 @@ Output is a VCF-like file, but instead of the positions field being in coordinat
 The following grep command can be used to remove and rows that represent likely confilcts with conventional vcf format:
 
 For import into TASSEL:
-'egrep -v '\t[ACGT]{2,}\t[ACGT]{2,}\t' rawFromGFA.vcf >forTassel.vcf'
+'egrep -v '\t[ACGT]{2,}\t[ACGT]{2,}\t' rawFromGFA.vcf | egrep -v '\t-\d+\t' >forTassel.vcf'
 
 ## salmonella_5_pggb.sh 
 
