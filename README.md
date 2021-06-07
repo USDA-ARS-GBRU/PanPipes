@@ -25,7 +25,7 @@ In organims with more than one homology group of chromosomes, such as most eukar
 
 After GFA creation using [xmfa_tools](https://github.com/brianabernathy/xmfa_tools) or any graph building pipeline,  we use [variantsFromGFA.pl](https://github.com/USDA-ARS-GBRU/PanPipes/blob/main/scripts/variantsFromGFA.pl) to describe variation encoded in the graph.  The script steps through each path in the graph and builds an index of focal segments that branch into two or more segments.  Only the forward branching is retained, such that internal variants of an inversion are treated as homologous to the aligned position in the forward strand.  This behavior is distinct from tools such as vg call.  The exit from an inversion creates a special case in that it must go from reverse to forward orientation.  These events are annotated by labelling the position with a '-' suffix to reflect inversion status.  Though this prevents redundant positions, the '-' may break a tool designed to accept vcf format.  If you encounter errors, we recommend you manually remove the variant since it should, in effect, be represented by its reciprocal end variant.  Additionally, we break from vcf convention and encode insertions and deletions as '-' for the non-indel state.  This behavior is much more in keeping with the graph approach but will also break some downstream tools. 
 
-## Read mapping
+## Short-read alignment
 
 We have explored many read aligners and none are without problems, although we are optimistic about emerging methods in hybrid seeding. Currently, we use [GraphAligner](https://github.com/maickrau/GraphAligner) with end-to-end alignment required and an additional filter on identity <92%. 
 
