@@ -33,8 +33,8 @@ def find_misaligns(infile,read_len=150,wiggle=5,boundarypattern="(?<=_)\d+"):
         for line in f:
             if re.search("^\@\w\w",line):
                 continue
-            elif int(line.strip().split('\t')[4]) <= 0:
-                continue
+            #elif int(line.strip().split('\t')[4]) <= 0:
+            #    continue
             boundaries=re.findall(boundarypattern,line)
             start_boundary=int(boundaries[0])
             end_boundary=int(boundaries[1])

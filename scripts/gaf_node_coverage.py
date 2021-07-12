@@ -39,7 +39,7 @@ def get_path_and_nodelen(gfa_file):
                 nodelen_d[int(line[1])] = nodelen
     return (pathlist,nodelen_d)
 
-'''
+"""
 def get_percent_node_cov(nodelen,read_path,start,end):
     if len(read_path) <=1:
         nl = nodelen[read_path[0]]
@@ -54,7 +54,7 @@ def get_percent_node_cov(nodelen,read_path,start,end):
         first_pc_cov = (first_len-start)/first_len
         last_pc_cov = (end+1)/last_len
         return (first_pc_cov,last_pc_cov)
-'''
+"""
 
 
 def get_node_cov(gaf_file,pathlist,nodelen_d):
@@ -62,19 +62,22 @@ def get_node_cov(gaf_file,pathlist,nodelen_d):
         node_cov_d = defaultdict(lambda: {'coverage': 0,'reads': [],
                                 'length':0})
         for line in f:
-            line = line.strip().split()
-            path_s = int(line[7])
-            path_e = int(line[8])
-            read = line[0]
-            read_path = line[5]
-            read_path = re.split('\D+',read_path)
-            read_path = filter(None, read_path)
-            read_path = [int(x) for x in read_path]
+            try:
+                line = line.strip().split()
+                path_s = int(line[7])
+                path_e = int(line[8])
+                read = line[0]
+                read_path = line[5]
+                read_path = re.split('\D+',read_path)
+                read_path = filter(None, read_path)
+                read_path = [int(x) for x in read_path]
+            except ValueError:
+                continue
             for i,n in enumerate(read_path):
                 if n in pathlist:
                     node_cov_d[n]['coverage'] += 1
                     node_cov_d[n]['reads'].append(read)
-                    
+
     node_cov_l = []
     for n in sorted(list(pathlist)):
         node_cov_l.append({'node':n,'reads':node_cov_d[n]['reads'],
