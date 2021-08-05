@@ -13,13 +13,18 @@ with open(gaf_in) as f:
     for line in f:
         splitline = line.strip().split('\t')
         readname = splitline[0]
-        dup_dict[readname]['aligns'].append(line.strip())
+        adict = {'text':line.strip(),
+                'matches':splitline[9]}
+        dup_dict[readname]['aligns'].append(adict)
 
 for key in dup_dict.keys():
-    count = len(dup_dict[key]['aligns'])
-    if count == 1:
-        print(dup_dict[key]['aligns'][0])
+    l = dup_dict[key]['aligns']
+    if len(l) == 1:
+        print(l[0]['text'])
     else:
-        chosenread = randint(0,count-1)
-        print(dup_dict[key]['aligns'][chosenread])
+        maxind = max(range(len(l)), key=lambda i: l[i]['matches'])
+        print(l[maxind]['text'])
+
+
+
 
