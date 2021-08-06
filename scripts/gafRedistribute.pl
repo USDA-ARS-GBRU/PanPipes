@@ -9,7 +9,7 @@ use Data::Dumper;
 
 my $file = shift;  #input gaf, see warning below
 
-warn("This script assumes you are using vg giraffe using -M >1 and a gaf file converted from vg using 'vg convert -G file.gam graph.xg >file.gaf'.  It also assumes reads are listed as pairs (after solo removal), forward then reverse, and the best (or one of best) match is listed first.")
+#warn("This script assumes you are using vg giraffe using -M >1 and a gaf file converted from vg using 'vg convert -G file.gam graph.xg >file.gaf'.  It also assumes reads are listed as pairs (after solo removal), forward then reverse, and the best (or one of best) match is listed first.")
 
 #cleans out unpaired reads
 my $priorBase = "";
