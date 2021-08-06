@@ -18,6 +18,8 @@ with open(gaf_in) as f:
         dup_dict[readname]['aligns'].append(adict)
 
 for key in dup_dict.keys():
+    if "/1" in key:
+        read2 = re.sub(key,"\/1","\/2")
     l = dup_dict[key]['aligns']
     if len(l) == 1:
         print(l[0]['text'])
