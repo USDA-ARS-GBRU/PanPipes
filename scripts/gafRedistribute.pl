@@ -64,7 +64,7 @@ while (my $l = <IN>) {
 	$bestScore{"$r1\_$r2"} = $score unless $bestScore{"$r1\_$r2"};
 	$bestMQ{"$r1\_$r2"} = $mq unless $bestMQ{"$r1\_$r2"};
 	#warn("$r1\_$r2");
-	push @{$lines{"$r1\_$r2"}}, "$line\n$l" if $score == $bestScore{"$r1\_$r2"} && $mq == $bestMQ{"$r1\_$r2"};
+	push @{$lines{"$r1\_$r2"}}, "$line\n$l" if ($score == $bestScore{"$r1\_$r2"} && $mq > ($bestMQ{"$r1\_$r2"} - 5));
 }
 close IN;
 
