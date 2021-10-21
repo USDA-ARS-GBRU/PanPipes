@@ -125,7 +125,8 @@ foreach my $chr (keys %chrs) {
 			if ($link{$anchor}{$_} == 0) {
 				$ref = $_;
 			} else {
-				push @alt, $_;
+				#push @alt, $_;
+				$alt[$link{$anchor}{$_}] = $_;
 			}
 		}
 		#
