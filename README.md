@@ -27,9 +27,9 @@ After GFA creation using [xmfa_tools](https://github.com/brianabernathy/xmfa_too
 
 ## Short-read alignment
 
-We have explored many read aligners and none are without problems, although we are optimistic about emerging methods in hybrid seeding. Currently, we use [GraphAligner](https://github.com/maickrau/GraphAligner) with end-to-end alignment required and an additional filter on identity <92%. 
+We have explored many read aligners and found vg giraffe to be the only aligners that scales to large, divergent plant genomes.  Giraffe index creation for graphs constructed as above requires careful attention be paid to defining homology groups (i.e. chromosomes) and founder samples based on path names.  See https://github.com/vgteam/vg/issues/3361.
 
-Most graph aligners should produce a GAM file.  This file can be used to produce coverage per node (and position) across the graph.  We highly recommend that this be done using 'vg pack' piped directly to [pack_table_to_seg_cov.pl](https://github.com/brianabernathy/gfa_var_genotyper/blob/main/pack_table_to_seg_cov.pl) in order to reduce static memory footprint. 
+Most graph aligners should produce a GAM file.  This file can be used to produce coverage per node (and position) across the graph.  We highly recommend that this be done using 'vg pack' piped directly to [pack_table_to_seg_cov.pl](https://github.com/brianabernathy/gfa_var_genotyper/blob/main/pack_table_to_seg_cov.pl) in order to reduce static memory footprint.  These file can be used for assorted useful diagnositics.  For genotyping done below, the edge table produced with an additional flag to vg pack is required.  
 
 ## Genotyping
 
