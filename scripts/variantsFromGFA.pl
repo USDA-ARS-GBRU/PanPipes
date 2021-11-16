@@ -150,12 +150,15 @@ foreach my $chr (keys %chrs) {
 				$refSeq = $seq{$ref};
 				@altSeq = ($seq{$alt[0]});
 			} else {
-				$refSeq = "complex\.$ref";
+				$refSeq = "longVar\.$ref";
 				@altSeq = @alt;
 			}
+		} elsif (scalar(@alt) > 1) {
+			$refSeq = "multiPath\.$ref";
+			@altSeq = @alt;
 		} else {
-				$refSeq = "multiPath\.$ref";
-				@altSeq = @alt;
+			$refSeq = "denseVar\.$ref";
+			@altSeq = @alt;
 		}
 		my @toPrint = ($chr, $anchor, "$ref\-$alt[0]", $refSeq, join(",",@altSeq), '.', '.','.','GT');
 		foreach (@ids) {
