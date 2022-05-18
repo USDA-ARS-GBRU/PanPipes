@@ -5,7 +5,7 @@ PanPipes is an end-to-end pipeline for pan-genomic graph construction and analys
 
 * For manipulating xmfas: xmfa_tools [https://github.com/USDA-ARS-GBRU/xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools")
 * For genotyping directly from a graph: gfa_var_genotyper [https://github.com/USDA-ARS-GBRU/gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper")
-* For imputation omptimized for skim-seq data and realistic plant populations: brute_impute [https://github.com/USDA-ARS-GBRU/super_imputer](https://github.com/USDA-ARS-GBRU/brute_impute "brute imputer")
+* For imputation optimized for skim-seq data and realistic plant populations: brute_impute [https://github.com/USDA-ARS-GBRU/super_imputer](https://github.com/USDA-ARS-GBRU/brute_impute "brute imputer")
 
 
 The PanPipes repository provides documentation detailing the end-to-end combined usage of our tools in a pan-genomic context. A PanPipes docker image is available ([coming soon](https://github.com/USDA-ARS-GBRU/PanPipes/docker/dockerfile "PanPipes docker image")) to provide all required software for running PanPipes. Required external software packages (in addition to GBRU repos above) are listed below, if you prefer to install manually.
