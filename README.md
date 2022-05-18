@@ -8,7 +8,7 @@ PanPipes is an end-to-end pipeline for pan-genomic graph construction and geneti
 * For imputation optimized for skim-seq data and realistic plant populations: brute_impute [https://github.com/USDA-ARS-GBRU/brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute")
 
 
-The PanPipes repository provides documentation detailing the end-to-end combined usage of our tools in a pan-genomic context. A PanPipes docker image is available ([coming soon](https://github.com/USDA-ARS-GBRU/PanPipes/docker/dockerfile "PanPipes docker image")) to provide all required software for running PanPipes. Required external software packages (in addition to GBRU repos above) are listed below, if you prefer to install manually.
+The PanPipes repository provides documentation detailing the end-to-end combined usage of our tools in a pan-genomic context. A PanPipes singularity image is available ([coming soon](https://github.com/USDA-ARS-GBRU/PanPipes/singularity/PanPipes.singularity "PanPipes singularity image")) to provide all required software for running PanPipes. Required external software packages (in addition to GBRU repos above) are listed below, if you prefer to install manually.
 
 * vg: [https://github.com/vgteam/vg](https://github.com/vgteam/vg "vg")
 
