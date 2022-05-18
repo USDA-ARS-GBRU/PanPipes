@@ -1,6 +1,4 @@
 # PanPipes
-Test sets and pipeline scripts for pan-genomic graph construction and analysis
-
 ![PanPipes Logo](/pics/logo.png)
 
 PanPipes is an end-to-end pipeline for pan-genomic graph construction and analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
