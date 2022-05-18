@@ -3,6 +3,22 @@ Test sets and pipeline scripts for pan-genomic graph construction and analysis
 
 ![PanPipes Logo](/pics/logo.png)
 
+PanPipes is an end-to-end pipeline for pan-genomic graph construction and analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
+
+* For manipulating xmfas: xmfa_tools [https://github.com/USDA-ARS-GBRU/xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools")
+* For genotyping directly from a graph: gfa_var_genotyper [https://github.com/USDA-ARS-GBRU/gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper")
+* For imputation omptimized for skim-seq data and realistic plant populations: brute_impute [https://github.com/USDA-ARS-GBRU/super_imputer](https://github.com/USDA-ARS-GBRU/brute_impute "brute imputer")
+
+
+The PanPipes repository provides documentation detailing the end-to-end combined usage of our tools in a pan-genomic context. A PanPipes docker image will also be available ([coming soon](https://github.com/USDA-ARS-GBRU/PanPipes/docker/dockerfile "PanPipes docker image")) to provide all required software for running PanPipes. Required external software packages (in addition to GBRU repos above) are listed below, if you prefer to install manually.
+
+* vg: [https://github.com/vgteam/vg](https://github.com/vgteam/vg "vg")
+
+Additional tools support upstream and downstream aspects of PanPipes, but are not strictly necessary.
+
+* mauve: [https://darlinglab.org/mauve/mauve.html](https://darlinglab.org/mauve/mauve.html "mauve")
+* tassel: [https://tassel.bitbucket.io/](https://tassel.bitbucket.io/ "tassel")
+
 ## Overview
 
 <img src="/pics/workFlow.png" width=450>
