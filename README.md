@@ -11,11 +11,11 @@ PanPipes is an end-to-end pipeline for pan-genomic graph construction and geneti
 The PanPipes repository provides documentation detailing the end-to-end combined usage of our tools in a pan-genomic context. A PanPipes singularity image is available ([coming soon](https://github.com/USDA-ARS-GBRU/PanPipes/singularity/PanPipes.singularity "PanPipes singularity image")) to provide all required software for running PanPipes. Required external software packages (in addition to GBRU repos above) are listed below, if you prefer to install manually.
 
 * vg: [https://github.com/vgteam/vg](https://github.com/vgteam/vg "vg")
+* tassel: [https://tassel.bitbucket.io/](https://tassel.bitbucket.io/ "tassel")
 
-Additional tools support upstream and downstream aspects of PanPipes, but are not strictly necessary.
+Additional tools support upstream aspects of PanPipes, but are not strictly necessary.
 
 * mauve: [https://darlinglab.org/mauve/mauve.html](https://darlinglab.org/mauve/mauve.html "mauve")
-* tassel: [https://tassel.bitbucket.io/](https://tassel.bitbucket.io/ "tassel")
 
 ## Overview
 
