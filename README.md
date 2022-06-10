@@ -41,9 +41,7 @@ After GFA creation using [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tool
 
 ## Short-read Alignment
 
-We have explored many read aligners and found vg giraffe to be the only aligner that scales to large, divergent plant genomes.  Giraffe index creation for graphs constructed as above requires careful attention be paid to defining homology groups (i.e. chromosomes) and founder samples based on path names.  See https://github.com/vgteam/vg/issues/3361.
-
-The creation of giraffe indexes required for alignment is discussed in more detail at [gfa_var_genotyper](https://github.com/brianabernathy/gfa_var_genotyper).
+We have explored many read aligners and found vg giraffe to be the only aligner that scales to large, divergent plant genomes.  Giraffe index creation for graphs constructed as above requires careful attention be paid to defining homology groups (i.e. chromosomes) and founder samples based on path names.  See https://github.com/vgteam/vg/issues/3361. The creation of giraffe indexes required for alignment is discussed in more detail at [gfa_var_genotyper](https://github.com/brianabernathy/gfa_var_genotyper).
 
 Most graph aligners should produce a GAM file which can be used to produce coverage per node (and position) across the graph. These file can be used for assorted useful diagnositics.  For genotyping done below, the pack edge table produced with an additional flag to vg pack is required.  
 
