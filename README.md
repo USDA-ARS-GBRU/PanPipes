@@ -1,5 +1,5 @@
 # PanPipes
-![PanPipes Logo](/pics/logo.png)
+![PanPipes Logo](/images/logo.png)
 
 PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
 
@@ -19,7 +19,7 @@ Additional tools support upstream aspects of PanPipes, but are not strictly nece
 
 ## Overview
 
-<img src="/pics/workFlow.png" width=450>
+<img src="/images/workFlow.png" width=450>
 
 Founder assemblies are aligned on a per chromosome basis.  Alignments are converted to graph data objects and merged into a whole-genome graph.  All variants segregating in founders are identified and described in a modified variant call format (VCF).  Short-reads from recombinant individuals are aligned to the genome graph and genotypes are inferred based on branch-specific read support.  These genotypes are added to the VCF file and conventional genetic analysis can be used to associate pangenomic loci with phenotypes.  Associated loci can be directly examined for major gene-altering variation by returning to chromosome alignments on which the graph is based.
 
