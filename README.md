@@ -23,7 +23,7 @@ Additional tools support upstream aspects of PanPipes, but are not strictly nece
 
 Founder assemblies are aligned on a per chromosome basis.  Alignments are converted to graph data objects and merged into a whole-genome graph.  All variants segregating in founders are identified and described in a modified variant call format (VCF).  Short-reads from recombinant individuals are aligned to the genome graph and genotypes are inferred based on branch-specific read support.  These genotypes are added to the VCF file and conventional genetic analysis can be used to associate pangenomic loci with phenotypes.  Associated loci can be directly examined for major gene-altering variation by returning to chromosome alignments on which the graph is based.
 
-## Construction
+## Graph Construction
 
 All downstream processing is based on genome-scale multi-sequence alignments that are converted into graph objects in [GFA format](https://github.com/GFA-spec/GFA-spec/blob/master/GFA1.md).  The sequences used to build the alignments must be represented as paths in the gfa.  Software, such as [pggb](https://github.com/pangenome/pggb), is a recent method to generate such graphs.  In our hands, we have noticed that pggb often generates unwarranted cycles that violate the positional homology paradigm followed in PanPipes (see above).  Our current preferred method is to rely on a multi-threaded implementation of the progressiveMauve algorithm, see [GPA](https://academic.oup.com/bioinformatics/article/35/14/i71/5529231).  
 
@@ -35,13 +35,15 @@ To acknowledge the concept of a linear reference, xmfas can be sorted relative t
 
 In organims with more than one homology group of chromosomes, such as most eukaryotes, chromosomes should be aligned independently.  If large inter-chromosomal translocations exist across samples - as discovered by nucmer/dotplot - then relevant chromosomes should be pooled and aligned together.  After independant alignment, careful attention must be paid to naming when chromsomes are combined into a full genome graph.  [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools) handles much of the naming details but consult documentation if naming seems to be an issue.
 
-## Variant calling
+## Graph Variantion
 
 After GFA creation using [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools) or another graph building pipeline, we use [gfa_variants.pl](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper/blob/main/gfa_variants.pl) to describe variation encoded in the graph.  The script steps through each path in the graph and builds an index of focal segments that branch into two or more segments.  Only the forward branching is retained, such that internal variants of an inversion are treated as homologous to the aligned position in the forward strand.  This behavior is distinct from tools such as vg call.  The exit from an inversion creates a special case in that it must go from reverse to forward orientation.  These events are annotated by labelling the position with a '-' prefix to reflect inversion status.  Though this prevents redundant positions, the '-' may break a tool designed to accept vcf format.  If you encounter errors, we recommend you manually remove the variant since it should, in effect, be represented by its reciprocal end variant.  Additionally, we break from vcf convention and encode insertions and deletions as '-' for the non-indel state.  This behavior is much more in keeping with the graph approach but will also break some downstream tools. 
 
-## Short-read alignment
+## Short-read Alignment
 
 We have explored many read aligners and found vg giraffe to be the only aligner that scales to large, divergent plant genomes.  Giraffe index creation for graphs constructed as above requires careful attention be paid to defining homology groups (i.e. chromosomes) and founder samples based on path names.  See https://github.com/vgteam/vg/issues/3361.
+
+The creation of giraffe indexes required for alignment is discussed in more detail at [gfa_var_genotyper](https://github.com/brianabernathy/gfa_var_genotyper).
 
 Most graph aligners should produce a GAM file which can be used to produce coverage per node (and position) across the graph. These file can be used for assorted useful diagnositics.  For genotyping done below, the pack edge table produced with an additional flag to vg pack is required.  
 
