@@ -1,6 +1,8 @@
 # PanPipes
 ![PanPipes Logo](/images/logo.png)
 
+See recent [pre-print on bioRxiv](https://www.biorxiv.org/content/10.1101/2022.06.10.495676v1)! 
+
 PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
 
 * For manipulating xmfas: xmfa_tools [https://github.com/USDA-ARS-GBRU/xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools")
@@ -33,7 +35,7 @@ We have observed [futile gap openings](https://github.com/koadman/mauve/issues/2
 
 To acknowledge the concept of a linear reference, xmfas can be sorted relative to the member sequences using [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools).  This sort occurs in a hierarchical fashion defined by the user.  In effect, the primary sequence, as chosen, will be perfectly collinear with the segment ordering of the graph.  This sort is not required; the re-ordering is a conceptual convenience if you desire your graph to be in roughly the same configuration as a community reference or other specific sequence, but it is highly recommended.
 
-In organims with more than one homology group of chromosomes, such as most eukaryotes, chromosomes should be aligned independently.  If large inter-chromosomal translocations exist across samples - as discovered by nucmer/dotplot - then relevant chromosomes should be pooled and aligned together.  After independant alignment, careful attention must be paid to naming when chromsomes are combined into a full genome graph.  [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools) handles much of the naming details but consult documentation if naming seems to be an issue.
+In organisms with more than one homology group of chromosomes, such as most eukaryotes, chromosomes should be aligned independently.  If large inter-chromosomal translocations exist across samples - as discovered by nucmer/dotplot - then relevant chromosomes should be pooled and aligned together.  After independant alignment, careful attention must be paid to naming when chromsomes are combined into a full genome graph.  [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools) handles much of the naming details but consult documentation if naming seems to be an issue.
 
 ## Graph Variants
 
