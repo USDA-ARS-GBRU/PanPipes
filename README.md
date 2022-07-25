@@ -12,7 +12,7 @@ This work is free of known copyright restrictions.
 
 See recent [pre-print on bioRxiv](https://www.biorxiv.org/content/10.1101/2022.06.10.495676v1)! 
 
-PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
+PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups: [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools"), [gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper"), and [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute").  See Required Software below. 
 
 ## Required Software
 
