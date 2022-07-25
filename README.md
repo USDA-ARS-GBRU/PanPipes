@@ -14,6 +14,8 @@ See recent [pre-print on bioRxiv](https://www.biorxiv.org/content/10.1101/2022.0
 
 PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups:
 
+## Required Software
+
 * For manipulating xmfas: xmfa_tools [https://github.com/USDA-ARS-GBRU/xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools")
 * For genotyping directly from a graph: gfa_var_genotyper [https://github.com/USDA-ARS-GBRU/gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper")
 * For imputation optimized for skim-seq data and realistic plant populations: brute_impute [https://github.com/USDA-ARS-GBRU/brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute")
@@ -27,6 +29,22 @@ The PanPipes repository provides documentation detailing the end-to-end combined
 Additional tools support upstream aspects of PanPipes, but are not strictly necessary.
 
 * mauve: [https://darlinglab.org/mauve/mauve.html](https://darlinglab.org/mauve/mauve.html "mauve")
+
+
+## Demos
+
+Test data and scripts are provided to demonstrate workflows for various types of PanPipes analyses. The test data is simplified to reduce size and computational resources required. For simplicity, the provided demo scripts also process MSA chromosomes and align samples sequentially. When working with larger data sets on an HPC, it is recommended to parallelize MSA construction and sample alignment to increase processing speed. However, the demos are designed to run on a modern laptop, see specific analysis sections below for processing requirment details.
+
+To run any of the PanPipes demos below, the required software must be installed. See [required software](#required-software) for details. Also, the variables at the top of scripts in the /demos/analysis_type/scripts directory must be modified to reflect your environment and desired processing parameters. At minimum, the paths to the [required software](#required-software) must be set properly.
+
+The demos below were tested using the most recent xmfa_toos, gfa_var_genotyper and brute_impute. Additional software versions tested were vg v1.42.0, TASSEL v5.0 and progressiveMauve build 2015-02-13.
+
+### Skim-Based Genotyping and Imputation
+
+The [demos/skim_seq](https://github.com/USDA-ARS-GBRU/PanPipes/tree/main/demos/skim_seq) directory contains 3 graph references, 2 chromosomes each. 2 parent and 4 RIL sample paired reads are also included. End-to-end rocessing (MSA and graph construction, graph indexing, read alignment, genotyping and imputation) took a bit more than 5 minutes to complete on an Intel Xeon Gold 2.4GHz cpu using 4 threads and 2GB memory. The relatively low computational resource requirements should allow the demo to run on a modern laptop.
+
+### more demos coming soon
+
 
 ## Overview
 

@@ -1,0 +1,7 @@
+Family	Name	Parent1	Parent2	Contribution1	Contribution2	F
+parent1Xparent2	parent1_sample	parent1	parent2	0.5	0.5	0.96
+parent1Xparent2	parent2_sample	parent1	parent2	0.5	0.5	0.96
+parent1Xparent2	ril1_sample	parent1	parent2	0.5	0.5	0.96
+parent1Xparent2	ril2_sample	parent1	parent2	0.5	0.5	0.96
+parent1Xparent2	ril3_sample	parent1	parent2	0.5	0.5	0.96
+parent1Xparent2	ril4_sample	parent1	parent2	0.5	0.5	0.96
