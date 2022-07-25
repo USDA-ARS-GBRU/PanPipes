@@ -1,5 +1,6 @@
 parent1
 parent2
+ref1
 parent1_sample
 parent2_sample
 ril1_sample
