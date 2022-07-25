@@ -33,9 +33,9 @@ Additional tools support upstream aspects of PanPipes, but are not strictly nece
 
 ## Demos
 
-Test data and scripts are provided to demonstrate workflows for various types of PanPipes analyses. The test data is simplified to reduce size and computational resources required. For simplicity, the provided demo scripts also process MSA chromosomes and align samples sequentially. When working with larger data sets on an HPC, it is recommended to parallelize MSA construction and sample alignment to increase processing speed. However, the demos are designed to run on a modern laptop, see specific analysis sections below for processing requirment details.
+Test data and scripts are provided to demonstrate workflows for various types of PanPipes analyses. The test data is simplified to reduce size and computational resources required. For simplicity, the provided demo scripts also process MSA chromosomes and align samples sequentially. When working with larger data sets, particularly on an HPC, it is recommended to parallelize MSA/graph construction and sample alignment to increase processing speed. However, the demos are designed to run on a modern laptop, see specific analysis sections below for processing requirments and time details.
 
-To run any of the PanPipes demos below, the required software must be installed. See [required software](#required-software) for details. Also, the variables at the top of scripts in the /demos/analysis_type/scripts directory must be modified to reflect your environment and desired processing parameters. At minimum, the paths to the [required software](#required-software) must be set properly.
+To run any of the PanPipes demos below, the [required software](#required-software) must be installed. Also, the variables at the top of scripts in the `/demos/analysis_type/scripts` directory must be modified to reflect your environment and desired processing parameters. At minimum, the paths to the [required software](#required-software) must be set properly.
 
 The demos below were tested using the most recent xmfa_toos, gfa_var_genotyper and brute_impute. Additional software versions tested were vg v1.42.0, TASSEL v5.0 and progressiveMauve build 2015-02-13.
 
