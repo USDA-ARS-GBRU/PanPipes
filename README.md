@@ -41,7 +41,7 @@ The demos below were tested using the most recent [xmfa_tools](https://github.co
 
 ### Skim-Based Genotyping and Imputation
 
-The [demos/skim_seq](https://github.com/USDA-ARS-GBRU/PanPipes/tree/main/demos/skim_seq) directory contains 3 graph references, 2 chromosomes each. 2 parent and 4 RIL sample paired reads are also included. End-to-end rocessing (MSA and graph construction, graph indexing, read alignment, genotyping and imputation) took ~5 minutes to complete on an Intel Xeon Gold 2.4GHz cpu using 4 threads and 2GB memory. The relatively low computational resource requirements should allow the demo to run on a modern laptop.
+The [demos/skim_seq](https://github.com/USDA-ARS-GBRU/PanPipes/tree/main/demos/skim_seq) directory contains 3 graph references, 2 chromosomes each. 2 parent and 4 RIL sample paired reads are also included. End-to-end processing (MSA and graph construction, graph indexing, read alignment, genotyping and imputation) took ~5 minutes to complete on an Intel Xeon Gold 2.4GHz cpu using 4 threads and 2GB memory. The relatively low computational resource requirements should allow the demo to run on a modern laptop.
 
 ### more demos coming soon
 
