@@ -14,7 +14,7 @@ See recent [publication in Nature Communications](https://www.nature.com/article
 
 PanPipes is an end-to-end pipeline for pan-genomic graph construction and genetic analysis.  Multiple components of the pipeline may have specific utility outside of PanPipes and so have been broken into three application groups: [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools"), [gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper"), and [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute").  See Required Software below. 
 
-NOTICE: WE HAVE RECENTLY DISCOVERED [AN ISSUE IN VGTOOLS](https://github.com/vgteam/vg/issues/3873) THAT WOULD REDUCE THE GENTOYPING ACCURACY OF PANPIPES IN SOME CASES. WE ARE IN THE PROCESS OF UNDERSTANDING ITS FULL EXTENT.
+NOTICE: Due to a [bug we've recently discovered in vg](https://github.com/vgteam/vg/issues/3873), node id mismatches in `vg pack` output can occur (resulting in genotyping errors) if using a GFA with node lengths > 1024 bp. PanPipes uses [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools") to process [mauve](https://darlinglab.org/mauve/mauve.html "mauve") MSAs, which will limit node lengths and not be susceptible to this issue. If you are not using [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools"), please be sure to check that your input GFA node lengths are <= 1024 bp. This issue should be resolved in the next [vg](https://github.com/vgteam/vg "vg") release - v1.47.0.
 
 ## Required Software
 
