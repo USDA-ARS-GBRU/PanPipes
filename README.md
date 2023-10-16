@@ -37,7 +37,7 @@ Test data and scripts are provided to demonstrate workflows for various types of
 
 To run any of the PanPipes demos below, the [required software](#required-software) must be installed. Also, the variables defined at the top of scripts in the `/demos/analysis_type/scripts` directory must be modified to reflect your environment and desired processing parameters. At minimum, the paths to the [required software](#required-software) must be set properly.
 
-The demos below were tested using the most recent [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools"), [gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper"), and [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute"). Additional software versions tested were vg v1.42.0, TASSEL v5.0 and progressiveMauve build 2015-02-13.
+The demos below were tested using the most recent [xmfa_tools](https://github.com/USDA-ARS-GBRU/xmfa_tools "xmfa_tools"), [gfa_var_genotyper](https://github.com/USDA-ARS-GBRU/gfa_var_genotyper "gfa_var_genotyper"), and [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute "brute impute"). Additional software versions tested were vg v1.47.0, TASSEL v5.0 and progressiveMauve build 2015-02-13.
 
 ### Skim-Based Genotyping and Imputation
 
