@@ -83,3 +83,5 @@ Once coverage information is generated, variants defined above can be called bas
 ## Imputation
 
 Imputation is performed using [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute). [TASSEL](https://tassel.bitbucket.io/) is required to provide basic functionality. However, in our experience, TASSEL struggles to properly impute skim-seq genotyping. brute_impute includes several scripts to provide additional filtering, format conversion, imputation, assessment and error checking. Our testing has shown brute_impute is able to impute more regions at a lower error-rate than TASSEL.
+
+## Visualization (Coming soon!)
