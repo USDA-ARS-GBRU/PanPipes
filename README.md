@@ -84,4 +84,32 @@ Once coverage information is generated, variants defined above can be called bas
 
 Imputation is performed using [brute_impute](https://github.com/USDA-ARS-GBRU/brute_impute). [TASSEL](https://tassel.bitbucket.io/) is required to provide basic functionality. However, in our experience, TASSEL struggles to properly impute skim-seq genotyping. brute_impute includes several scripts to provide additional filtering, format conversion, imputation, assessment and error checking. Our testing has shown brute_impute is able to impute more regions at a lower error-rate than TASSEL.
 
-## Visualization (Coming soon!)
+## Visualization with maf2xmfa
+
+This tool will convert an maf file of a single sequence/chromosome to an xmfa file, which the mauve-viewer or Geneious can display.  (The MAF files need to be converted from HAL files using cactus-hal2maf distributed with minigraph-cactus.)
+
+See [tool-sepcific docs](https://github.com/USDA-ARS-GBRU/PanPipes/blob/main/utilities/maf2xmfa.md) for details, but there is an example below.
+
+### Running for example yeast dataset
+For testing this pipeline, we recommend using the Yeast dataset supplied with minigraph-cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/examples/yeastPangenome.txt
+
+Construct the pangenome graph with minigraph-cactus:
+```bash
+wget https://raw.githubusercontent.com/ComparativeGenomicsToolkit/cactus/master/examples/yeastPangenome.txt
+cactus-pangenome ./js yeastPangenome.txt --reference S288C --outDir yeast-pg --outName yeast-pg --vcf --giraffe
+```
+From yeast-pg/chrom-alignments, convert the chromosome alignment for chrI from HAL to MAF using the hal2maf tool supplied with cactus.
+```bash
+cactus-hal2maf --chunkSize 1000000 --refGenome S288C ./js yeast-pg/chrom-alignments/chrI.hal yeast-pg/chrom-alignments/chrI.maf
+```
+Convert the chromosome alignment from MAF into an XMFA
+```bash
+python maf2xmfa.py -i yeast-pg/chrom-alignments/chrI.maf -o yeast-pg/chrom-alignments/chrI.xmfa
+```
+
+**Alternative**: If preserving the nucleotide content of unaligned regions of the graph is preferred, the -f flag allows for a SeqFile to be supplied in the same format as minigraph-cactus uses.
+```bash
+while read line;do url=$(echo $line |cut -f 2 -d ' ') ; wget $url ;done<yeastPangenome.txt
+sed -E 's/https.*yeast\///' > localYeastPangenome.txt
+python maf2xmfa.py -i yeast-pg/chrom-alignments/chrI.maf -o yeast-pg/chrom-alignments/chrI.xmfa -f localYeastPangenome.txt
+```
