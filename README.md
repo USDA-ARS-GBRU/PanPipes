@@ -88,7 +88,7 @@ Imputation is performed using [brute_impute](https://github.com/USDA-ARS-GBRU/br
 
 This tool will convert an maf file of a single sequence/chromosome to an xmfa file, which the mauve-viewer or Geneious can display.  (The MAF files need to be converted from HAL files using cactus-hal2maf distributed with minigraph-cactus.)
 
-See [tool-sepcific docs](https://github.com/USDA-ARS-GBRU/PanPipes/blob/main/utilities/maf2xmfa.md) for details, but there is an example below.
+See [tool-specific docs](https://github.com/USDA-ARS-GBRU/PanPipes/blob/main/utilities/maf2xmfa.md) for details, but there is an example below.
 
 ### Running for example yeast dataset
 For testing this pipeline, we recommend using the Yeast dataset supplied with minigraph-cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/examples/yeastPangenome.txt
